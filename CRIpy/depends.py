@@ -212,7 +212,7 @@ class Color(OriginalColor):
         return self._alpha
 
     def get_rgba(self):
-        return *self.get_rgb(), self._alpha
+        return (*self.get_rgb()), self._alpha
 
     def set_alpha(self, value):
         self._alpha = value
