@@ -238,16 +238,22 @@ class Color(OriginalColor):
     def tint(self, value):
         return self.shading.tint(self, value)
 
-    def tints(self, count):
+    def tints(self, count=10):
         for i in range(count):
             yield self.tint(1.0 - (1.0 / count) * i)
+
+    def get_tints(self):
+        return self.tints()
 
     def shade(self, value):
         return self.shading.shade(self, value)
 
-    def shades(self, count):
+    def shades(self, count=10):
         for i in range(count):
             yield self.shade(1.0 - (1.0 / count) * i)
+
+    def get_shades(self):
+        return self.shades()
 
     def alpha(self, value):
         r = Color(self)
